@@ -30,7 +30,7 @@ struct ContentView: View {
             
             RealityView { content in
                 // Load a local 3D model (usdz format)
-                if let scene = try? await Entity(named: "HarryPotterWandV13", in: realityKitContentBundle) {
+                if let scene = try? await Entity(named: "my 3D Object Name", in: realityKitContentBundle) {
                     // Set the scale
                     scene.transform.scale = [1, 1, 1]
                     // Set the rotation
@@ -41,7 +41,7 @@ struct ContentView: View {
                     
                     // Set the position of the particle entity
                     particleEntity.transform.translation = SIMD3<Float>(x: 0, y: 0.3, z: 0)
-                    // パーティクルシステムの種類指定
+                    // select particle type
                     var particles = presets[PARTICLE_SYSTEM_TYPE]
                     // Set the particle system
                     particleEntity.components[ParticleEmitterComponent.self] = particles
